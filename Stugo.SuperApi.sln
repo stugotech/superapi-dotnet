@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stugo.SuperApi", "Stugo.SuperApi\Stugo.SuperApi.csproj", "{5285F6AD-E616-4F2F-B4F8-C96CBA089BFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stugo.SuperApi.Test", "Stugo.SuperApi.Test\Stugo.SuperApi.Test.csproj", "{0AB80527-354E-455C-9FD0-9B2D5CC97CBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5285F6AD-E616-4F2F-B4F8-C96CBA089BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5285F6AD-E616-4F2F-B4F8-C96CBA089BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5285F6AD-E616-4F2F-B4F8-C96CBA089BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5285F6AD-E616-4F2F-B4F8-C96CBA089BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB80527-354E-455C-9FD0-9B2D5CC97CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB80527-354E-455C-9FD0-9B2D5CC97CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB80527-354E-455C-9FD0-9B2D5CC97CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB80527-354E-455C-9FD0-9B2D5CC97CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
