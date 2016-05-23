@@ -29,6 +29,7 @@ namespace Stugo.SuperApi.Json
 
         public object As(Type type)
         {
+            this.ThrowIfError();
             Type interfaceType;
 
             if (type.IsAssignableFrom(typeof(JsonObject)))
@@ -109,6 +110,7 @@ namespace Stugo.SuperApi.Json
         }
 
 
+        public void ThrowIfError()
         {
             if (this.ContainsKey("error"))
             {
