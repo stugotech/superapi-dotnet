@@ -28,5 +28,11 @@ namespace Stugo.SuperApi
 
             return new RelationClient(url, includes);
         }
+
+
+        public void ThrowIfError()
+        {
+            Attributes.ThrowIfError();
+        }
     }
 }

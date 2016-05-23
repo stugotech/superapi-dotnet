@@ -107,5 +107,13 @@ namespace Stugo.SuperApi.Json
 
             return obj;
         }
+
+
+        {
+            if (this.ContainsKey("error"))
+            {
+                throw this.As<ApiException>();
+            }
+        }
     }
 }
