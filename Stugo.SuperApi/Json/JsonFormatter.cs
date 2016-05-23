@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -37,7 +38,8 @@ namespace Stugo.SuperApi.Json
 
                 foreach (DictionaryEntry pair in (IDictionary)value)
                 {
-                    builder.Append((string)pair.Key);
+                    var key = (string)pair.Key;
+                    builder.Append(Char.ToLower(key[0]) + key.Substring(1));
                     builder.Append(":");
                     builder.Append(FormatValue(pair.Value));
                     builder.Append(",");

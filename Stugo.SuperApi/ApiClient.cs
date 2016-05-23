@@ -11,43 +11,47 @@ namespace Stugo.SuperApi
 {
     public class ApiClient
     {
-        public async Task<Resource> Get(string url, RequestOptions options)
+        public async Task<Resource> Get(string url, RequestOptions options = null)
         {
-            return await Request("GET", url, options, null);
+            return await Request("GET", url, null, options);
         }
 
 
-        public async Task<Resource> Create(string url, RequestOptions options, object data)
+        public async Task<Resource> Create(string url, object data, RequestOptions options = null)
         {
-            return await Request("POST", url, options, data);
+            return await Request("POST", url, data, options);
         }
 
 
-        public async Task<Resource> Update(string url, RequestOptions options, object data)
+        public async Task<Resource> Update(string url, object data, RequestOptions options = null)
         {
-            return await Request("PATCH", url, options, data);
+            return await Request("PATCH", url, data, options);
         }
 
 
-        public async Task<Resource> Replace(string url, RequestOptions options, object data)
+        public async Task<Resource> Replace(string url, object data, RequestOptions options = null)
         {
-            return await Request("PUT", url, options, data);
+            return await Request("PUT", url, data, options);
         }
 
 
-        public async Task<Resource> Delete(string url, RequestOptions options)
+        public async Task<Resource> Delete(string url, RequestOptions options = null)
         {
-            return await Request("DELETE", url, options, null);
+            return await Request("DELETE", url, null, options);
         }
 
 
-        async Task<Resource> Request(string method, string url, RequestOptions options, object data)
+        async Task<Resource> Request(string method, string url, object data, RequestOptions options)
         {
-            var qs = options.ToQueryString();
 
-            if (!String.IsNullOrEmpty(qs))
+            if (options != null)
             {
-                url += '?' + qs;
+                var qs = options.ToQueryString();
+
+                if (!String.IsNullOrEmpty(qs))
+                {
+                    url += '?' + qs;
+                }
             }
 
             var request = (HttpWebRequest)WebRequest.Create(url);

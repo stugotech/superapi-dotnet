@@ -69,5 +69,11 @@ namespace Stugo.SuperApi.Test
         {
             Assert.Equal("{a:1,b:2}", JsonFormatter.FormatValue(new { a = 1, b = 2 }));
         }
+
+        [Fact]
+        public void UpperCaseObjectTest()
+        {
+            Assert.Equal("{a:1,bar:2}", JsonFormatter.FormatValue(new { A = 1, Bar = 2 }));
+        }
     }
 }

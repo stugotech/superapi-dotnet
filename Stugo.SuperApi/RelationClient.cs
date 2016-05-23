@@ -34,25 +34,25 @@ namespace Stugo.SuperApi
         }
 
 
-        public async Task<Resource> Create(RequestOptions options, object data)
+        public async Task<Resource> Create(object data, RequestOptions options = null)
         {
-            return await client.Create(url, options, data);
+            return await client.Create(url, data, options);
         }
 
 
-        public async Task<Resource> Update(RequestOptions options, object data)
+        public async Task<Resource> Update(object data, RequestOptions options = null)
         {
-            return await client.Update(url, options, data);
+            return await client.Update(url, data, options);
         }
 
 
-        public async Task<Resource> Replace(RequestOptions options, object data)
+        public async Task<Resource> Replace(object data, RequestOptions options = null)
         {
-            return await client.Replace(url, options, data);
+            return await client.Replace(url, data, options);
         }
 
 
-        public async Task<Resource> Delete(RequestOptions options)
+        public async Task<Resource> Delete(RequestOptions options = null)
         {
             return await client.Delete(url, options);
         }

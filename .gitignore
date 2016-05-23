@@ -19,6 +19,7 @@ build/
 [Pp]ackages/
 *.generated.*
 *.tmp_proj
+*.nupkg
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

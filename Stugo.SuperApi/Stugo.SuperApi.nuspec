@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://opensource.org/licenses/ISC</licenseUrl>
+    <projectUrl>https://github.com/stugotech/superapi-dotnet</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A SuperAPI client.</description>
+    <releaseNotes>Release notes</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>JSON API restful SuperAPI</tags>
+  </metadata>
+</package>

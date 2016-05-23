@@ -23,37 +23,37 @@ namespace Stugo.SuperApi
         }
 
 
-        public async Task<Resource> List(RequestOptions options)
+        public async Task<Resource> List(RequestOptions options = null)
         {
             return await client.Get($"{baseUrl}/{resourceName}", options);
         }
 
 
-        public async Task<Resource> Get(RequestOptions options, object id)
+        public async Task<Resource> Get(object id, RequestOptions options = null)
         {
             return await client.Get($"{baseUrl}/{resourceName}/{id}", options);
         }
 
 
-        public async Task<Resource> Create(RequestOptions options, object data)
+        public async Task<Resource> Create(object data, RequestOptions options = null)
         {
-            return await client.Create($"{baseUrl}/{resourceName}", options, data);
+            return await client.Create($"{baseUrl}/{resourceName}", data, options);
         }
 
 
-        public async Task<Resource> Update(RequestOptions options, object id, object data)
+        public async Task<Resource> Update(object id, object data, RequestOptions options = null)
         {
-            return await client.Update($"{baseUrl}/{resourceName}/{id}", options, data);
+            return await client.Update($"{baseUrl}/{resourceName}/{id}", data, options);
         }
 
 
-        public async Task<Resource> Replace(RequestOptions options, object id, object data)
+        public async Task<Resource> Replace(object id, object data, RequestOptions options = null)
         {
-            return await client.Replace($"{baseUrl}/{resourceName}/{id}", options, data);
+            return await client.Replace($"{baseUrl}/{resourceName}/{id}", data, options);
         }
 
 
-        public async Task<Resource> Delete(RequestOptions options, object id)
+        public async Task<Resource> Delete(object id, RequestOptions options = null)
         {
             return await client.Delete($"{baseUrl}/{resourceName}/{id}", options);
         }
