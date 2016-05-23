@@ -61,19 +61,19 @@ namespace Stugo.SuperApi.Test
         [Fact]
         public void DictionaryTest()
         {
-            Assert.Equal("{a:1,b:2}", JsonFormatter.FormatValue(new Dictionary<string, int>() { { "a", 1 }, { "b", 2 } }));
+            Assert.Equal("{\"a\":1,\"b\":2}", JsonFormatter.FormatValue(new Dictionary<string, int>() { { "a", 1 }, { "b", 2 } }));
         }
 
         [Fact]
         public void ObjectTest()
         {
-            Assert.Equal("{a:1,b:2}", JsonFormatter.FormatValue(new { a = 1, b = 2 }));
+            Assert.Equal("{\"a\":1,\"b\":2}", JsonFormatter.FormatValue(new { a = 1, b = 2 }));
         }
 
         [Fact]
         public void UpperCaseObjectTest()
         {
-            Assert.Equal("{a:1,bar:2}", JsonFormatter.FormatValue(new { A = 1, Bar = 2 }));
+            Assert.Equal("{\"a\":1,\"bar\":2}", JsonFormatter.FormatValue(new { A = 1, Bar = 2 }));
         }
     }
 }

@@ -39,7 +39,10 @@ namespace Stugo.SuperApi.Json
                 foreach (DictionaryEntry pair in (IDictionary)value)
                 {
                     var key = (string)pair.Key;
-                    builder.Append(Char.ToLower(key[0]) + key.Substring(1));
+                    builder.Append('"');
+                    builder.Append(Char.ToLower(key[0]));
+                    builder.Append(key.Substring(1));
+                    builder.Append('"');
                     builder.Append(":");
                     builder.Append(FormatValue(pair.Value));
                     builder.Append(",");
