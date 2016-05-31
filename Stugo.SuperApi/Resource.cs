@@ -16,6 +16,13 @@ namespace Stugo.SuperApi
         public List<Resource> Includes { get; set; }
 
 
+        public Resource()
+        {
+            Links = new Dictionary<string, string>();
+            Includes = new List<Resource>();
+        }
+
+
         public RelationClient Relation(string name)
         {
             string url = Links[name];
@@ -32,7 +39,10 @@ namespace Stugo.SuperApi
 
         public void ThrowIfError()
         {
-            Attributes.ThrowIfError();
+            if (Attributes != null)
+            {
+                Attributes.ThrowIfError();
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Stugo.SuperApi.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace Stugo.SuperApi
         }
 
 
-        async Task<Resource> Request(string method, string url, object data, RequestOptions options)
+        private async Task<Resource> Request(string method, string url, object data, RequestOptions options)
         {
 
             if (options != null)
@@ -59,7 +60,9 @@ namespace Stugo.SuperApi
 
             if (data != null)
             {
-                var bytes = Encoding.UTF8.GetBytes(JsonFormatter.FormatValue(data));
+                data = new { attributes = data };
+                var requestJson = JsonFormatter.FormatValue(data);
+                var bytes = Encoding.UTF8.GetBytes(requestJson);
                 request.ContentType = "application/json";
                 request.ContentLength = bytes.Length;
 
@@ -77,8 +80,15 @@ namespace Stugo.SuperApi
                 json = await reader.ReadToEndAsync();
             }
 
-            var parser = new JsonParser(json);
-            return parser.ParseObject().As<Resource>();
+            if (!String.IsNullOrEmpty(json))
+            {
+                var parser = new JsonParser(json);
+                return parser.ParseObject().As<Resource>();
+            }
+            else
+            {
+                return new Resource();
+            }
         }
     }
 }

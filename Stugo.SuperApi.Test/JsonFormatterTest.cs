@@ -53,6 +53,12 @@ namespace Stugo.SuperApi.Test
         }
 
         [Fact]
+        public void ComplexStringTest()
+        {
+            Assert.Equal(@"""hello\nworld""", JsonFormatter.FormatValue("hello\nworld"));
+        }
+
+        [Fact]
         public void ArrayTest()
         {
             Assert.Equal("[1,2,3]", JsonFormatter.FormatValue(new int[] { 1, 2, 3 }));
